@@ -1,0 +1,27 @@
+{
+  "name": "neighbourhood-connect",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start:backend": "node packages/backend/dist/index.js",
+    "dev:backend": "cd packages/backend && npm run dev",
+    "dev:web": "cd packages/web && npm run dev",
+    "dev:admin": "cd packages/admin && npm run dev",
+    "dev:mobile": "cd packages/mobile && npx expo start",
+    "install:all": "npm install && npm install --workspaces",
+    "build:backend": "cd packages/backend && npm run build",
+    "build:web": "cd packages/web && npm run build",
+    "build:admin": "cd packages/admin && npm run build",
+    "test:backend": "cd packages/backend && npm test",
+    "test:web": "cd packages/web && npm test"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

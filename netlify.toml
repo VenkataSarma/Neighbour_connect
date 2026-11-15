@@ -1,0 +1,20 @@
+# Netlify configuration for the web app (packages/web)
+[build]
+  # Run from the repository root so npm workspaces resolve correctly
+  command = "npm install && npm run build:web"
+  publish = "packages/web/dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback: every route is handled by index.html (React Router)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Long-term caching for hashed Vite assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

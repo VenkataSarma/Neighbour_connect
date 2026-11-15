@@ -1,7 +1,7 @@
 # Netlify configuration for the web app (packages/web)
 [build]
   # Run from the repository root so npm workspaces resolve correctly
-  command = "npm install && npm run build:web"
+  command = "npm install --include=dev && npm run build:web"
   publish = "packages/web/dist"
 
 [build.environment]
